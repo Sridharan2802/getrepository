@@ -7,11 +7,6 @@
 **/
 public with sharing class accHelper {
 
-code is created. with sridhar.
-this is new line.
-this is from new-a branch.
-
-this is my new acc line.
 
 
     

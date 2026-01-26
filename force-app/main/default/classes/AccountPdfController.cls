@@ -6,7 +6,7 @@ public with sharing class AccountPdfController {
             // Spring '26 feature to generate PDF from HTML
             Blob pdfBlob = Blob.toPdf(htmlContent);
             
-            // Create ContentVersion
+            // Create ContentVersions
             ContentVersion cv = new ContentVersion();
             cv.Title = accountName + ' - PDF';
             cv.PathOnClient = accountName + '.pdf';

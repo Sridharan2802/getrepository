@@ -14,7 +14,7 @@ public with sharing class AccountPdfController {
             cv.IsMajorVersion = true;
             insert cv;
             
-            // Get ContentDocumentId
+            // Get ContentDocumentIds
             Id contentDocumentId = [
                 SELECT ContentDocumentId 
                 FROM ContentVersion 

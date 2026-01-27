@@ -3,11 +3,10 @@ public with sharing class AccountPdfController {
     @AuraEnabled
     public static Id saveAccountDetailsAsPDF(String htmlContent, Id recordId, String accountName) {
         try {
-            // Spring '26 feature to generate PDF from HTML
+            // Spring '26 feature to generate PDF from HTML contentingd
             Blob pdfBlob = Blob.toPdf(htmlContent);
             
-            // Create ContentVersion data
-            // Create ContentVersionsn
+            // Create ContentVersion data from content version
             ContentVersion cv = new ContentVersion();
             cv.Title = accountName + ' - PDF';
             cv.PathOnClient = accountName + '.pdf';
@@ -22,7 +21,7 @@ public with sharing class AccountPdfController {
                 WHERE Id = :cv.Id
             ].ContentDocumentId;
             
-            // Link to the record
+            // Link to the records
             ContentDocumentLink cdl = new ContentDocumentLink();
             cdl.ContentDocumentId = contentDocumentId;
             cdl.LinkedEntityId = recordId;
